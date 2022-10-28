@@ -1,0 +1,43 @@
+.sidebar {
+    width: 320px;
+    min-width: 320px;
+    height: 100%;
+    border-right: 1px solid #ccc;
+    padding: 25px;
+}
+
+.logo {
+    margin-bottom: 15px;
+
+    a {
+        color: #daf;
+        font-size: 30px;
+        text-decoration: none;
+
+        b {
+            color: #adaf;
+            font-size: 30px;
+        }
+    }
+}
+
+.description {
+    margin-bottom: 25px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #ccc;
+}
+
+.menu {
+    ul {
+        li {
+            a {
+                display: block;
+                font-weight: 500;
+                text-decoration: none;
+                color: #000;
+            }
+        }
+    }
+
+}
