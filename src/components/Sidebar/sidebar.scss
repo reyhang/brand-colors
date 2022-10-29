@@ -8,17 +8,22 @@
 
 .logo {
     margin-bottom: 15px;
+    background: url("../../assets//images//logo1.png") left center/30px 30px no-repeat;
+    
 
     a {
         color: #daf;
         font-size: 30px;
         text-decoration: none;
+        padding-left: 30px;
 
         b {
             color: #adaf;
             font-size: 30px;
         }
     }
+    
+   
 }
 
 .description {
@@ -36,8 +41,71 @@
                 font-weight: 500;
                 text-decoration: none;
                 color: #000;
+                &:hover{
+                    color: salmon;
+                }
             }
         }
     }
 
+}
+
+.modal {
+    max-width: 720px;
+    background: #fff;
+    box-shadow: 0 0 15px 0 rgba(#000, .1);
+    padding: 50px;
+    position: relative;
+
+    .modal-close-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        background: #ddd;
+        cursor: pointer;
+    
+        svg {
+          height: 20px;
+          width: 20px;
+        }
+      }
+    
+
+    h2 {
+        margin-bottom: 18px;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    p {
+        color: #607d8b;
+        line-height: 1.7em;
+        letter-spacing: 0.2;
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        strong {
+            color: black;
+        }
+
+    }
+}
+
+
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(#fff, .8);
 }
