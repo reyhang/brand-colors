@@ -1,0 +1,13 @@
+
+.content {
+    flex: 1; //Sidebardan kalan tüm alanı kapsaması için verilen stil.
+    overflow: auto;
+    .header{
+        height: 55px;
+        border-bottom: 1px solid gainsboro;
+        display: flex;
+        position: sticky;
+        top:0;
+    }
+
+}
