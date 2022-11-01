@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import BrandsData from '../../brands.json'
+import './brand.scss'
 
 export default function Brand() {
 
@@ -10,12 +11,23 @@ export default function Brand() {
         (brandsArray.push(BrandsData[key]))
     )
 
-    const [brands,setBrands] = useState(brandsArray)
+    const [brands, setBrands] = useState(brandsArray)
 
     return (
         <section className='brands'>
-         
-         {brands.map((item)=> <div> {item.title} </div> )}
+
+            {brands.map((item) => <div className='brand'>
+
+                <article>
+                    {item.title}
+                </article>
+                <div className='brand-colors'>
+                    {item.colors.map(color => (
+                    <span style={{'--bgColor': `#${color}`}}>
+                        {color}
+                    </span>))}
+                </div>
+            </div>)}
 
         </section>
     )
