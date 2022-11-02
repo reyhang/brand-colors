@@ -1,29 +1,31 @@
-import React, { useState } from 'react'
-import BrandsData from '../../brands.json'
+import React, { useContext } from 'react'
 import './brand.scss'
+import { getContrastYIQ } from '../helpers'
+import MainContext from '../../MainContext'
 
-export default function Brand() {
+export default function Brand({brand}) {
 
-    //Öncelikle BrandsData'yı bir diziye çevrilmesi gerekir.
-
-    const brandsArray = []
-    Object.keys(BrandsData).map(key =>
-        (brandsArray.push(BrandsData[key]))
-    )
-
-    const [brands, setBrands] = useState(brandsArray)
-
+    const {brands,selectedBrands,setSelectedBrands} = useContext(MainContext)
+    
+    const toggleSelected = () => {
+        if(setSelectedBrands.includes(brand.slug)) {
+            setSelectedBrands(selectedBrands.filter(b => b.slug !== brand.slug))
+        } else {
+            setSelectedBrands([...selectedBrands,brand.slug])
+        }
+    }
+    
     return (
-        <section className='brands'>
+        <section className='brand'>
 
             {brands.map((item) => <div className='brand'>
 
-                <article>
+                <article onClick={toggleSelected}>
                     {item.title}
                 </article>
                 <div className='brand-colors'>
                     {item.colors.map(color => (
-                    <span style={{'--bgColor': `#${color}`}}>
+                    <span style={{'--bgColor': `#${color}`, '--textColor': `${getContrastYIQ(color)}`}}>
                         {color}
                     </span>))}
                 </div>
