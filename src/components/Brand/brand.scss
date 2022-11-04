@@ -21,13 +21,16 @@
             background: var(--bgColor);
             padding: 10px;
             margin: 3px;
-            flex:1;
-            height: 40px;
+            height: 55px;
+            width: 70px;
             justify-content: center;
             align-items: center;
             font-size: 18px;
             text-align: center;
-            font-weight: 400;
+            font-weight: 300;
+            color: var(--textColor);
+            text-indent: -9999px;
+            
         }
     }
 
