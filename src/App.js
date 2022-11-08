@@ -1,25 +1,22 @@
 import { useState } from "react";
 import Content from "./components/Content/Content";
 import Sidebar from "./components/Sidebar/Sidebar";
-import BrandsData from './brands.json'
+import BrandsData from "./brands.json";
 import MainContext from "./MainContext";
 
-
-
 function App() {
+  let brandsArray = [];
+  Object.keys(BrandsData).forEach((key) => brandsArray.push(BrandsData[key]));
 
-  const brandsArray = []
-  Object.keys(BrandsData).map(key =>
-    (brandsArray.push(BrandsData[key]))
-  )
+  const [brands, setBrands] = useState(brandsArray);
+  const [selectedBrands, setSelectedBrands] = useState([]);
 
-  const [brands, setBrands] = useState(brandsArray)
-  const [selectedBrands, setSelectBrands] = useState([])
-  
   const data = {
     brands,
-    setSelectBrands,
-  }
+    setBrands,
+    selectedBrands,
+    setSelectedBrands,
+  };
 
   return (
     <>
@@ -27,9 +24,7 @@ function App() {
         <Sidebar />
         <Content />
       </MainContext.Provider>
-
     </>
-
   );
 }
 
