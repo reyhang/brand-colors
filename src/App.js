@@ -3,6 +3,7 @@ import Content from "./components/Content/Content";
 import Sidebar from "./components/Sidebar/Sidebar";
 import BrandsData from "./brands.json";
 import MainContext from "./MainContext";
+import Copied from "./components/Copied/Copied";
 
 function App() {
   let brandsArray = [];
@@ -10,17 +11,20 @@ function App() {
 
   const [brands, setBrands] = useState(brandsArray);
   const [selectedBrands, setSelectedBrands] = useState([]);
+  const [copied, setCopied] = useState(false)
 
   const data = {
     brands,
     setBrands,
     selectedBrands,
     setSelectedBrands,
+    setCopied
   };
 
   return (
     <>
       <MainContext.Provider value={data}>
+        {copied && <Copied color={copied} />}
         <Sidebar />
         <Content />
       </MainContext.Provider>
