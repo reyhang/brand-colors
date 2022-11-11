@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import './brand.scss'
 import { getContrastYIQ } from '../helpers'
 import MainContext from '../../MainContext'
+import ClipboardButton from 'react-clipboard.js'
 
 export default function Brand({brand}) {
 
@@ -26,9 +27,10 @@ export default function Brand({brand}) {
                 </article>
                 <div className='brand-colors'>
                     {brand.colors.map((color) => (
-                    <span style={{'--bgColor': `#${color}`, '--textColor': `${getContrastYIQ(color)}`}}>
-                        {color}
-                    </span>))}
+                            <ClipboardButton component='span' data-clipboard-text={color} style={{'--bgColor': `#${color}`, '--textColor': `${getContrastYIQ(color)}`}}>
+                                {color}
+                            </ClipboardButton> 
+                    ))}
                 </div>
             </div>
 
