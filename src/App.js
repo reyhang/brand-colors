@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Content from "./components/Content/Content";
 import Sidebar from "./components/Sidebar/Sidebar";
 import BrandsData from "./brands.json";
@@ -20,6 +20,17 @@ function App() {
     setSelectedBrands,
     setCopied
   };
+
+  useEffect(() => {
+
+    const timeout = setTimeout(()=>{
+      setCopied(false)
+    },1000)
+    return () => {
+      clearTimeout(timeout)
+    }
+  }, [copied])
+  
 
   return (
     <>

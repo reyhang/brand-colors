@@ -3,10 +3,11 @@ import './brand.scss'
 import { getContrastYIQ } from '../helpers'
 import MainContext from '../../MainContext'
 import ClipboardButton from 'react-clipboard.js'
+import { MdContentCopy } from "react-icons/md";
 
 export default function Brand({brand}) {
 
-    const {selectedBrands,setSelectedBrands} = useContext(MainContext)
+    const {selectedBrands,setSelectedBrands,setCopied} = useContext(MainContext)
     
     const toggleSelected = () => {
 		if (selectedBrands.includes(brand.slug)) {
@@ -15,6 +16,10 @@ export default function Brand({brand}) {
 			setSelectedBrands([...selectedBrands, brand.slug])
 		}
 	}
+
+    const setColor = (color) => {
+        setCopied(color)
+    }
 
       
     return (
@@ -26,10 +31,16 @@ export default function Brand({brand}) {
                     {brand.title}
                 </article>
                 <div className='brand-colors'>
-                    {brand.colors.map((color) => (
-                            <ClipboardButton component='span' data-clipboard-text={color} style={{'--bgColor': `#${color}`, '--textColor': `${getContrastYIQ(color)}`}}>
-                                {color}
-                            </ClipboardButton> 
+                    {brand.colors.map((color) => ( <>
+                            <ClipboardButton 
+                            component='span' 
+                            data-clipboard-text={color} 
+                            onSuccess={()=> setColor(color)}
+                            style={{'--bgColor': `#${color}`, '--textColor': `${getContrastYIQ(color)}`}}>
+                            <MdContentCopy size={"25px"} />
+                             {' '} {color}  
+                            </ClipboardButton>                            
+  </>
                     ))}
                 </div>
             </div>
