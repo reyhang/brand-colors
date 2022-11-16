@@ -8,7 +8,12 @@
         border-bottom: 1px solid gainsboro;
         display: flex;
         position: sticky;
-        top: 0;
+        top: 0; 
+        background-color: #fff;
+
+        span{
+            color: #a09e9e;
+        }
     }
 }
 

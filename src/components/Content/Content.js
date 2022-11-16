@@ -10,7 +10,7 @@ import Download from '../Download/Download'
 
 export default function Content() {
 
-const {selectedBrands,brands} = useContext(MainContext)
+const {brands} = useContext(MainContext)
 
   const loading = () => {
     return(
@@ -27,9 +27,9 @@ const {selectedBrands,brands} = useContext(MainContext)
   <main className='content'>
     <header className='header'>
         <Search/>
-        {
-          selectedBrands.length > 0 ? <Download/> : null
-        }
+        
+          <Download/> 
+        
     </header>
 
     {

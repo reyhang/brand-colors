@@ -37,7 +37,7 @@ export default function Brand({brand}) {
                             data-clipboard-text={color} 
                             onSuccess={()=> setColor(color)}
                             style={{'--bgColor': `#${color}`, '--textColor': `${getContrastYIQ(color)}`}}>
-                            <MdContentCopy size={"25px"} />
+                            <MdContentCopy />
                              {' '} {color}  
                             </ClipboardButton>                            
   </>
