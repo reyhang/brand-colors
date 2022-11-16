@@ -1,0 +1,59 @@
+.download {
+    display:flex;
+    padding: 15px;
+
+    .actions {
+        display: flex;
+
+        a{
+             background: transparent;
+            padding-right: 7px;
+
+            svg {
+                display: block;
+                cursor: pointer;
+
+                path {
+                    stroke: #adaf;
+                }
+            }
+        }
+
+        button {
+            background: transparent;
+            padding-right: 7px;
+
+            svg {
+                display: block;
+                cursor: pointer;
+
+                path {
+                    stroke: #adaf;
+                }
+            }
+        }
+
+    }
+
+    .selected {
+        font-size: 18px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        button {
+            background: transparent;
+            padding-right: 7px;
+
+            
+            svg {
+                display: block;
+                cursor: pointer;
+            }
+
+        }
+
+    }
+
+
+
+}
