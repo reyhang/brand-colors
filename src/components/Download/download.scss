@@ -6,7 +6,7 @@
         display: flex;
 
         a{
-             background: transparent;
+            background: transparent;
             padding-right: 7px;
 
             svg {
@@ -17,6 +17,16 @@
                     stroke: #adaf;
                 }
             }
+        }
+        
+        select{
+            margin-right: 5px;
+            height: 30px;
+            width: 50px;
+            appearance: none;    
+            background:#eee;
+            text-align: center;
+            cursor: pointer;
         }
 
         button {
