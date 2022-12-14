@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import MainContext from '../../MainContext'
 import './download.scss'
 import { FiDownload,FiLink2,FiX } from 'react-icons/fi'
+import { Link } from 'react-router-dom'
 
 export default function Download() {
 
@@ -74,8 +75,10 @@ export default function Download() {
                     <FiDownload color={lilac} size={'23px'}> </FiDownload>
                     </a> 
             </button>
-                <a href='{downloadUrl}'>
-                    <FiLink2 onClick={getLink} color={lilac} size={'25px'}/>
+                <a href='#!'>
+                    <Link to={`collection/${selectedBrands.join(",")}`}>
+                        <FiLink2 color={lilac} size={'25px'} />
+                    </Link>
                 </a>
                
             </div>

@@ -27,7 +27,6 @@ const {brands} = useContext(MainContext)
   <main className='content'>
     <header className='header'>
         <Search/>
-        
           <Download/> 
         
     </header>

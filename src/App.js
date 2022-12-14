@@ -4,6 +4,8 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import BrandsData from "./brands.json";
 import MainContext from "./MainContext";
 import Copied from "./components/Copied/Copied";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Collection from "./components/Collection/Collection";
 
 function App() {
   let brandsArray = [];
@@ -45,7 +47,12 @@ function App() {
       <MainContext.Provider value={data}>
         {copied && <Copied color={copied} />}
         <Sidebar />
-        <Content />
+        <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Content/>} />
+          <Route path="/collection/:slugs" element={<Collection/>}/>
+        </Routes>
+        </BrowserRouter>
       </MainContext.Provider>
     </>
   );
