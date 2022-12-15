@@ -11,42 +11,37 @@ export default function Download() {
     const [method,setMethod] = useState('css')
     const lilac = 'rgb(195, 90, 255)'
 
-    const getLink = () => {
-        prompt('Here`s the URL to share',` http://localhost:3000/collection/${selectedBrands.join(",")}`)
-    }
-
-
     useEffect(() => {
         if (selectedBrands.length > 0) {
             let output = ''
             switch (method) {
 
-                case 'css':
-					output += ':root {\n'
-					selectedBrands.map(slug => {
+                default:
+					output += ':root {\n' // eslint-disable-next-line
+					selectedBrands.map(slug => { 
 						let brand = brands.find(brand => brand.slug === slug)
-						brand.colors.map((color, key) => {
+						brand.colors.map((color, key) => 
 							output += `--${slug}-${key}: #${color};\n`
-						})
+						)
 					})
 					output += '}'
 					break;
 
-				case 'scss':
+				case 'scss': // eslint-disable-next-line
 					selectedBrands.map(slug => {
 						let brand = brands.find(brand => brand.slug === slug)
-						brand.colors.map((color, key) => {
+						brand.colors.map((color, key) => 
 							output += `$${slug}-${key}: #${color};\n`
-						})
+						)
 					})
 					break;
 
-				case 'less':
+				case 'less': // eslint-disable-next-line
 					selectedBrands.map(slug => {
 						let brand = brands.find(brand => brand.slug === slug)
-						brand.colors.map((color, key) => {
+						brand.colors.map((color, key) => 
 							output += `@${slug}-${key}: #${color};\n`
-						})  
+						)  
 					})
                     break;
                 }
@@ -75,18 +70,24 @@ export default function Download() {
                     <FiDownload color={lilac} size={'23px'}> </FiDownload>
                     </a> 
             </button>
+            <button>
                 <a href='#!'>
                     <Link to={`collection/${selectedBrands.join(",")}`}>
                         <FiLink2 color={lilac} size={'25px'} />
                     </Link>
-                </a>
+                </a>  
+            </button>
+            <button onClick={()=> setSelectedBrands([])}>
+                   <a  href='#!'>
+                    <Link>
+                    <FiX color={lilac} size={'23px'} />
+                    </Link>
+                    </a> 
+                </button>
                
             </div>
 
             <div className='selected'>
-                <button onClick={()=> setSelectedBrands([])}>
-                    <FiX color={lilac} size={'23px'} />
-                </button>
                 <p style={selectedBrands.length === 0 ? { color: 'gray' } : { color: lilac }}>
                     {' '} {selectedBrands.length}
                     {selectedBrands.length === 1 || selectedBrands.length === 0 ? ' brand' : ' brands'} collected {' '}

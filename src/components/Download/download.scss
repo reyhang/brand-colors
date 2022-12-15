@@ -1,11 +1,11 @@
 .download {
-    display:flex;
+    display: flex;
     padding: 15px;
 
     .actions {
         display: flex;
 
-        a{
+        a {
             background: transparent;
             padding-right: 7px;
 
@@ -18,52 +18,36 @@
                 }
             }
         }
-        
-        select{
+
+        button {
+            background: transparent;
+            padding-right: 7px;
+
+            svg {
+                display: block;
+                cursor: pointer;
+
+                path {
+                    stroke: #adaf;
+                }
+            }
+        }
+
+        select {
             margin-right: 5px;
             height: 30px;
             width: 50px;
-            appearance: none;    
-            background:#eee;
+            appearance: none;
+            background: #eee;
             text-align: center;
             cursor: pointer;
         }
-
-        button {
-            background: transparent;
-            padding-right: 7px;
-
-            svg {
-                display: block;
-                cursor: pointer;
-
-                path {
-                    stroke: #adaf;
-                }
-            }
-        }
-
     }
 
     .selected {
-        font-size: 18px;
+        font-size: 20px;
         font-weight: 500;
         display: flex;
-        align-items: center;
-        button {
-            background: transparent;
-            padding-right: 7px;
-
-            
-            svg {
-                display: block;
-                cursor: pointer;
-            }
-
-        }
-
+        justify-content: center;
     }
-
-
-
 }
