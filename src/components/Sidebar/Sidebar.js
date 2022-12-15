@@ -16,7 +16,7 @@ export default function Sidebar() {
     return (<>
         <aside className='sidebar'>
             <div className='logo'>               
-             <a href='!#'>Brand<b>Colors</b></a>
+             <a href='/'>Brand<b>Colors</b></a>
             </div>
 
             <div className='description'>
