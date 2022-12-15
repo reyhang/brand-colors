@@ -1,0 +1,34 @@
+.content {
+    flex: 1; //Sidebardan kalan tüm alanı kapsaması için verilen stil.
+    overflow: auto;
+
+    a {
+        text-decoration: none;
+    }
+
+    .header {
+        height: 60px;
+        border-bottom: 1px solid gainsboro;
+        display: flex;
+        position: sticky;
+        top: 0;
+        background-color: #fff;
+        justify-content: space-between;
+        background: #fff;
+        align-items: center;
+
+        .back-button {
+            background: transparent;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+            color: #999;
+
+            svg {
+                display: block;
+                margin-right: 10px;
+            }
+        }
+    }
+}
