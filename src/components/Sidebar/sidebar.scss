@@ -6,51 +6,53 @@
     padding: 25px;
 
 
-.logo {
-    margin-bottom: 15px;
-    background: url("../../assets//images//logo1.png") left center/30px 30px no-repeat;
-    
+    .logo {
+        margin-bottom: 15px;
+        background: url("../../assets//images//logo1.png") left center/30px 30px no-repeat;
 
-    a {
-        color: #daf;
-        font-size: 30px;
-        text-decoration: none;
-        padding-left: 30px;
 
-        b {
-            color: #adaf;
+        a {
+            color: #daf;
             font-size: 30px;
+            text-decoration: none;
+            padding-left: 30px;
+
+            b {
+                color: #adaf;
+                font-size: 30px;
+            }
         }
-    }  
-   
-}
 
-.description {
-    margin-bottom: 25px;
-    font-size: 18px;
-    line-height: 1.7;
-    color: #ccc;
-}
+    }
 
-.menu {
-    ul {
-        li {
-            button {
-                display: block;
-                font-weight:600;
-                font-size: 20px;
-                text-decoration: none;
-                background-color: transparent;
-                color: rgb(26, 25, 25);
-                &:hover{
-                    color: salmon;
+    .description {
+        margin-bottom: 25px;
+        font-size: 18px;
+        line-height: 1.7;
+        color: #ccc;
+    }
+
+    .menu {
+        ul {
+            li {
+                button {
+                    display: block;
+                    font-weight: 600;
+                    font-size: 20px;
+                    text-decoration: none;
+                    background-color: transparent;
+                    color: rgb(26, 25, 25);
+
+                    &:hover {
+                        color: salmon;
+                    }
                 }
             }
         }
-    }
 
+    }
 }
-}
+
 .modal {
     max-width: 720px;
     background: #fff;
@@ -66,16 +68,15 @@
         height: 40px;
         background: #ddd;
         cursor: pointer;
-    
+
         svg {
-          height: 20px;
-          width: 20px;
+            height: 20px;
+            width: 20px;
         }
-      }
-    
+    }
+
 
     h2 {
-        margin-bottom: 18px;
         font-size: 24px;
         font-weight: bold;
     }
@@ -97,8 +98,6 @@
     }
 }
 
-
-
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -109,4 +108,34 @@
     align-items: center;
     justify-content: center;
     background: rgba(#fff, .8);
+}
+
+
+@media(max-width: 1000px) {
+    #root {
+        flex-direction: column;
+
+        .sidebar {
+            width: 100%;
+            position: relative;
+            height: auto;
+            border-bottom: 1px solid #ccc;
+            border-right: none;
+
+            .menu {
+                margin-left: 0;
+            }
+
+            .logo {
+
+                background: url("../../assets//images//logo1.png") left center/30px 30px no-repeat;
+
+            }
+
+            .description {
+                font-size: 18px;
+            }
+        }
+
+    }
 }
