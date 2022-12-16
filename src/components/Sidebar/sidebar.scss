@@ -21,8 +21,7 @@
             color: #adaf;
             font-size: 30px;
         }
-    }
-    
+    }  
    
 }
 
@@ -36,11 +35,13 @@
 .menu {
     ul {
         li {
-            a {
+            button {
                 display: block;
-                font-weight: 500;
+                font-weight:600;
+                font-size: 20px;
                 text-decoration: none;
-                color: #000;
+                background-color: transparent;
+                color: rgb(26, 25, 25);
                 &:hover{
                     color: salmon;
                 }

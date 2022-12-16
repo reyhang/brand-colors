@@ -25,7 +25,7 @@ export default function Sidebar() {
             <nav className="menu">
                 <ul>
                     <li>
-                        <a onClick={toggleModal} href='!#'>About Brand Colors</a>
+                        <button href='/' onClick={toggleModal}>About BrandColors</button>
                     </li>
                 </ul>
             </nav>
@@ -41,7 +41,7 @@ export default function Sidebar() {
 
             <p>
                 BrandColors was created by
-                <a href='!#'>
+                <a href='https://www.designbombs.com/'>
                     <strong> DesignBombs</strong>
                 </a>.
                 The goal was to create a helpful reference for the brand color codes that are needed most often.
