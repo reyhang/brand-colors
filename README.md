@@ -1,7 +1,11 @@
 # React ile BrandColors Projesi
 
-1- yarn install 
-2- yarn start
+## Projeyi çalıştırmak için
+
+```bash
+$ yarn install
+$ yarn start
+```
 
 ## Demo 
 
