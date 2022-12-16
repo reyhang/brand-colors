@@ -15,7 +15,7 @@ export default function Search() {
 
       <input
         type={'text'}
-        onChange={(e) => setSearch(e.target.value)}
+        onChange={(e) => setSearch(e.target.value.toLowerCase())}
         placeholder='Search Brands' />
     </div>
   )
